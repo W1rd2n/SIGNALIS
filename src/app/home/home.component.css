@@ -1,19 +1,20 @@
 .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start;
-  align-content: flex-start;
   background-color: #000000;
   color: white;
   font-family: SIGNALIS;
+  gap: 20px;
 }
 
-.container1 {
+.flex-row-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.container1 {
   justify-content: stretch;
   align-content: stretch;
   background-color: #000000;
@@ -33,22 +34,16 @@
   background-color: #000000;
   color: white;
   font-family: SIGNALIS;
+  font-size: 2vw;
   max-width: 100%;
   width: 100%;
   height: 80px;
-  font-size: 1.5rem;
   text-shadow: #000000 5px 5px 10px;
   margin-bottom: 2.5rem;
   background-image: url(../../assets/17.png);
 }
 
-.welcome {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-.end {
+.images {
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -56,24 +51,15 @@
 
 .video {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   min-width: 0;
   width: 100%;
   min-height: 0;
   aspect-ratio: 16 / 9;
 }
 
-.box1 {
-  min-width: 0;
-  /* height: 135rem; */
-  /* width: 40rem; */
-}
-
-.box2 {
-  min-width: 0;
-  height: 135rem;
-  /* width: 40rem; */
+.main-column {
+  min-width: 300px;
+  flex: 2;
 }
 
 a:link,
@@ -82,15 +68,15 @@ a:visited {
   text-decoration: none;
 }
 
-.button {
+.music {
   background: none;
   border: none;
   color: white;
   font-family: SIGNALIS;
+  font-size: 2vw;
   max-width: 100%;
   width: 100%;
   height: auto;
-  font-size: 1.5rem;
   text-shadow: #000000 5px 5px 10px;
   cursor: pointer;
   padding: 0;
@@ -101,7 +87,7 @@ a:visited {
   border: none;
   color: white;
   font-family: SIGNALIS;
-  font-size: 1.5rem;
+  font-size: 2vw;
   text-shadow: #000000 5px 5px 10px;
   cursor: not-allowed;
 }
@@ -111,7 +97,7 @@ a:visited {
   border: none;
   color: white;
   font-family: SIGNALIS;
-  font-size: 1.5rem;
+  font-size: 2vw;
   text-shadow: #000000 5px 5px 10px;
   cursor: pointer;
 }
@@ -124,11 +110,11 @@ span {
   color: white;
 }
 
-.button:hover span {
+.music:hover span {
   display: none;
 }
 
-button:hover::before {
+.music:hover::before {
   content: "REMEMBER OUR PROMISE";
 }
 
@@ -148,7 +134,7 @@ button:hover::before {
   content: "THE KING IN YELLOW";
 }
 
-.doted-spacer {
+.dashed-spacer {
   border-top: 5px dashed white;
   width: 100%;
   height: 1px;
