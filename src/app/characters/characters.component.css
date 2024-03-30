@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+  background-color: #171717;
+  color: white;
+  margin-bottom: 30px;
+}
+
+th {
+  color: white;
+  text-align: center;
+  font-family: SIGNALIS;
+}
+
+td {
+  color: white;
+  text-align: center;
+  font-family: SIGNALIS;
+  min-width: 100px;
+}
+
+img {
+  margin: 10px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
