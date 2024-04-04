@@ -9,3 +9,20 @@ body {
   font-family: SIGNALIS;
   src: url(./assets/Perfect\ DOS\ VGA\ 437.ttf);
 }
+
+.mdc-button__label {
+  color: white;
+  background-color: #000000;
+}
+
+.mat-mdc-button-touch-target {
+  background-color: #000000;
+}
+
+.mat-mdc-dialog-surface .mdc-dialog__surface {
+  background-color: #000000;
+}
+
+form {
+  padding-top: 1rem;
+}

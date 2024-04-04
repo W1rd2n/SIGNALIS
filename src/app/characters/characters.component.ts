@@ -2,6 +2,8 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { WorkshopComponent } from '../workshop/workshop.component';
 
 export interface PeriodicElement {
   unitClass: string;
@@ -178,7 +180,10 @@ export class CharactersComponent implements AfterViewInit {
   ];
   dataSource2 = new MatTableDataSource(ELEMENT_DATA2);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    public dialogService: MatDialog
+  ) {}
 
   @ViewChild('firstMatSort', { static: true })
   sort: MatSort = new MatSort();
@@ -197,5 +202,15 @@ export class CharactersComponent implements AfterViewInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialogService.open(WorkshopComponent);
+
+    dialogRef.componentInstance.unitAdded.subscribe((newUnit: any) => {
+      this.dataSource.data.push(newUnit);
+      this.dataSource._updateChangeSubscription();
+      dialogRef.close();
+    });
   }
 }

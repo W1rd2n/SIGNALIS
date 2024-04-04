@@ -1,0 +1,43 @@
+<form class="form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="unitClass" formControlName="unitClass" />
+  </mat-form-field>
+  <input
+    class="unitImage"
+    title=""
+    type="file"
+    accept=".jpg, .jpeg, .png"
+    (change)="onFileSelected($event)"
+  />
+  <mat-form-field>
+    <input matInput placeholder="aliases" formControlName="aliases" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="affiliation"
+      formControlName="affiliation"
+      readonly
+      style="font-family: SIGNALIS"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="occupation" formControlName="occupation" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="species"
+      formControlName="species"
+      readonly
+      style="font-family: SIGNALIS"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="gender" formControlName="gender" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="height" formControlName="height" />
+  </mat-form-field>
+  <button class="Submit" mat-button type="submit">Submit</button>
+</form>
