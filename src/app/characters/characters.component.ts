@@ -124,7 +124,7 @@ const ELEMENT_DATA2: PeriodicElement2[] = [
     gender: 'Female',
   },
   {
-    name: 'Isolde_Itou',
+    name: 'Isolde Itou',
     image: '../assets/characters/gestalt/Isolde_Itou.png',
     pkz: 'ITISLD-V-560524',
     occupation: 'shop assistant',
@@ -134,7 +134,7 @@ const ELEMENT_DATA2: PeriodicElement2[] = [
     gender: 'Female',
   },
   {
-    name: 'Erika_Itou',
+    name: 'Erika Itou',
     image: '../assets/characters/gestalt/Erika_Itou.png',
     pkz: 'ITERIK-V-560524',
     occupation: 'university student',
