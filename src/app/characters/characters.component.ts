@@ -5,7 +5,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkshopComponent } from '../workshop/workshop.component';
 
-export interface PeriodicElement {
+export interface ReplikaUnit {
   unitClass: string;
   image: string;
   aliases: string;
@@ -14,6 +14,7 @@ export interface PeriodicElement {
   species: string;
   gender: string;
   height: number;
+  editColumn?: string;
 }
 
 export interface PeriodicElement2 {
@@ -27,7 +28,7 @@ export interface PeriodicElement2 {
   gender: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: ReplikaUnit[] = [
   {
     unitClass: 'LSTR',
     image: '../assets/characters/replika/LSTR.png',
@@ -165,6 +166,7 @@ export class CharactersComponent implements AfterViewInit {
     'species',
     'gender',
     'height',
+    'editColumn',
   ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -210,6 +212,20 @@ export class CharactersComponent implements AfterViewInit {
     dialogRef.componentInstance.unitAdded.subscribe((newUnit: any) => {
       this.dataSource.data.push(newUnit);
       this.dataSource._updateChangeSubscription();
+      dialogRef.close();
+    });
+  }
+
+  editReplika(unit: ReplikaUnit, index: number) {
+    console.log(unit, index);
+
+    const dialogRef = this.dialogService.open(WorkshopComponent, {
+      data: unit,
+    });
+
+    dialogRef.componentInstance.unitAdded.subscribe((editedUnit: any) => {
+      this.dataSource.data[index] = editedUnit;
+      this.dataSource.data = [...this.dataSource.data];
       dialogRef.close();
     });
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { JsonPipe } from '@angular/common';
+import { ReplikaUnit } from '../characters/characters.component';
+import { DIALOG_DATA } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-workshop',
@@ -32,7 +34,11 @@ export class WorkshopComponent implements OnInit {
   @Output() unitAdded = new EventEmitter<any>();
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    @Inject(DIALOG_DATA) public data: ReplikaUnit
+  ) {
+    console.log(data);
     this.myForm = this.fb.group({
       unitClass: [
         '',
@@ -49,6 +55,11 @@ export class WorkshopComponent implements OnInit {
         [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
       ],
     });
+
+    this.handleEdit();
+  }
+  handleEdit() {
+    this.myForm.patchValue(this.data);
   }
 
   ngOnInit(): void {
@@ -72,7 +83,7 @@ export class WorkshopComponent implements OnInit {
       const uplodedImage = e.srcElement.result;
       this.myForm.patchValue({
         image: uplodedImage,
-      })
+      });
       console.log(e);
     };
     reader.readAsDataURL(file);

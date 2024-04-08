@@ -68,6 +68,15 @@
     </td>
   </ng-container>
 
+  <ng-container matColumnDef="editColumn">
+    <th mat-header-cell *matHeaderCellDef>editUnit</th>
+    <td class="column-width" mat-cell *matCellDef="let element; let i = index">
+      <button class="openDialog" mat-button (click)="editReplika(element, i)">
+        Edit
+      </button>
+    </td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
