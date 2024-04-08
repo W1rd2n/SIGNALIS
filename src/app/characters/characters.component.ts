@@ -4,6 +4,7 @@ import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkshopComponent } from '../workshop/workshop.component';
+import { ELEMENT_DATA, ELEMENT_DATA2 } from './characters.tableData';
 
 export interface ReplikaUnit {
   unitClass: string;
@@ -17,7 +18,7 @@ export interface ReplikaUnit {
   editColumn?: string;
 }
 
-export interface PeriodicElement2 {
+export interface GestaltUnit {
   name: string;
   image: string;
   pkz: string;
@@ -28,127 +29,6 @@ export interface PeriodicElement2 {
   gender: string;
 }
 
-const ELEMENT_DATA: ReplikaUnit[] = [
-  {
-    unitClass: 'LSTR',
-    image: '../assets/characters/replika/LSTR.png',
-    aliases: 'Landvermessungs, Schiff-Techniker Replika',
-    affiliation: 'AEON',
-    occupation:
-      'Orbital Service, Penrose Program Spacecraft Technician, Combat Engineer, Sapper and Scout',
-    species: 'Replika',
-    gender: 'Female',
-    height: 178,
-  },
-  {
-    unitClass: 'FKLR',
-    image: '../assets/characters/replika/FKLR.png',
-    aliases: 'Kommando-Leiteinheit, Führungs Replika',
-    affiliation: 'AEON',
-    occupation: 'AEON Security Force Commander',
-    species: 'Replika',
-    gender: 'Female',
-    height: 250,
-  },
-  {
-    unitClass: 'ADLR',
-    image: '../assets/characters/replika/ADLR.png',
-    aliases: 'Administration, Datenverarbeitung, Logistik Replika',
-    affiliation: 'AEON',
-    occupation: 'Facility Administration',
-    species: 'Replika',
-    gender: 'Male',
-    height: 175,
-  },
-  {
-    unitClass: 'KLBR',
-    image: '../assets/characters/replika/KLBR.png',
-    aliases: 'Kommando-Leiteinheit, Bioresonanz Technik Replika',
-    affiliation: 'AEON',
-    occupation: 'Bioresonance Influence, Control and Coordination, FKLR Cadre',
-    species: 'Replika',
-    gender: 'Female',
-    height: 152,
-  },
-  {
-    unitClass: 'STAR',
-    image: '../assets/characters/replika/STAR.png',
-    aliases: 'Sicherheitstechniker, Aufseher Replika',
-    affiliation: 'AEON',
-    occupation: 'Protektor Security Technician, Riot Control',
-    species: 'Replika',
-    gender: 'Female',
-    height: 220,
-  },
-  {
-    unitClass: 'MNHR',
-    image: '../assets/characters/replika/MNHR.png',
-    aliases: 'Minenarbeit, Nukleartechniker, Hochsicherheits Replika',
-    affiliation: 'AEON',
-    occupation: 'Hazardous Environment Heavy Worker',
-    species: 'Replika',
-    gender: 'Female',
-    height: 260,
-  },
-  {
-    unitClass: 'ARAR',
-    image: '../assets/characters/replika/ARAR.png',
-    aliases: 'Allzweck, Reparatur, Arbeiter Replika',
-    affiliation: 'AEON',
-    occupation:
-      'Repair, Maintenance, Construction, Production of Industrial Goods',
-    species: 'Replika',
-    gender: 'Female',
-    height: 185,
-  },
-  {
-    unitClass: 'EULR',
-    image: '../assets/characters/replika/EULR.png',
-    aliases: 'Einfache, Universelle, Leichte Replika',
-    affiliation: 'AEON',
-    occupation: 'Domestic, Office, Education, Simple Medical Tasks',
-    species: 'Replika',
-    gender: 'Female',
-    height: 175,
-  },
-];
-
-const ELEMENT_DATA2: PeriodicElement2[] = [
-  {
-    name: 'Ariane Yeong',
-    image: '../assets/characters/gestalt/Ariane_Yeong.png',
-    pkz: 'YNGARN-L-5921D',
-    occupation: 'pilot of the Penrose 512',
-    birthDate: '18S 6P a',
-    birthPlace: 'Leng',
-    species: 'Gestalt',
-    gender: 'Female',
-  },
-  {
-    name: 'Isolde Itou',
-    image: '../assets/characters/gestalt/Isolde_Itou.png',
-    pkz: 'ITISLD-V-560524',
-    occupation: 'shop assistant',
-    birthDate: '14S 52P c',
-    birthPlace: 'Vineta',
-    species: 'Gestalt',
-    gender: 'Female',
-  },
-  {
-    name: 'Erika Itou',
-    image: '../assets/characters/gestalt/Erika_Itou.png',
-    pkz: 'ITERIK-V-560524',
-    occupation: 'university student',
-    birthDate: '14S 52P c',
-    birthPlace: 'Vineta',
-    species: 'Gestalt',
-    gender: 'Female',
-  },
-];
-
-/**
- * @title Basic use of `<table mat-table>`
- */
 @Component({
   selector: 'app-characters',
   styleUrl: 'characters.component.css',
