@@ -3,6 +3,8 @@
 body {
   margin: 0 !important;
   background-color: #000000;
+  color: white;
+  font-family: SIGNALIS;
 }
 
 @font-face {
