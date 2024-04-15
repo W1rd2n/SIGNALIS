@@ -29,4 +29,5 @@ h1 {
   max-width: 100vw;
   max-height: 100vh;
   overflow-y: scroll;
+  background-color: #171717;
 }

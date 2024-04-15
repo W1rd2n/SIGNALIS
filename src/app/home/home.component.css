@@ -144,3 +144,20 @@ span {
   flex: 2;
   min-width: 0;
 }
+
+.buy {
+  text-align: center;
+  font-size: 24px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.img-logo {
+  width: 128px;
+  height: 128px;
+}
