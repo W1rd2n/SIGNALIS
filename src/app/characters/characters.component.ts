@@ -5,29 +5,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkshopComponent } from '../workshop/workshop.component';
 import { ELEMENT_DATA, ELEMENT_DATA2 } from './characters.tableData';
-
-export interface ReplikaUnit {
-  unitClass: string;
-  image: string;
-  aliases: string;
-  affiliation: string;
-  occupation: string;
-  species: string;
-  gender: string;
-  height: number;
-  editColumn?: string;
-}
-
-export interface GestaltUnit {
-  name: string;
-  image: string;
-  pkz: string;
-  occupation: string;
-  birthDate: string;
-  birthPlace: string;
-  species: string;
-  gender: string;
-}
+import { ReplikaUnit } from './characters.tableUnitModel';
 
 @Component({
   selector: 'app-characters',

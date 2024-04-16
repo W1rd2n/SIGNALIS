@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { JsonPipe } from '@angular/common';
-import { ReplikaUnit } from '../characters/characters.component';
+import { ReplikaUnit } from '../characters/characters.tableUnitModel';
 import { DIALOG_DATA } from '@angular/cdk/dialog';
 
 @Component({

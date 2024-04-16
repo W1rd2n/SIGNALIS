@@ -1,4 +1,4 @@
-import { GestaltUnit, ReplikaUnit } from './characters.component';
+import { GestaltUnit, ReplikaUnit } from './characters.tableUnitModel';
 
 export const ELEMENT_DATA: ReplikaUnit[] = [
   {
