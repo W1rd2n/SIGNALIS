@@ -16,6 +16,13 @@
   border-radius: 1.5rem;
   min-width: 500px;
   flex: 2;
+  filter: blur(3px);
+  transition: filter 0.5s;
+}
+
+.images:hover {
+  filter: none;
+  cursor: pointer;
 }
 
 h1 {
