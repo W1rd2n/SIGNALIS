@@ -16,11 +16,14 @@
   border-radius: 1.5rem;
   min-width: 500px;
   flex: 2;
-  filter: blur(3px);
-  transition: filter 0.5s;
+  filter: blur(3px) grayscale(100%);
+  transition: filter 1s;
 }
 
 .images:hover {
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px black;
+  transition: 1s ease;
   filter: none;
   cursor: pointer;
 }
