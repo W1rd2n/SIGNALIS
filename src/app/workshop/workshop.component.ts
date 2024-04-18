@@ -42,17 +42,27 @@ export class WorkshopComponent implements OnInit {
     this.myForm = this.fb.group({
       unitClass: [
         '',
-        [Validators.required, Validators.minLength(4), Validators.maxLength(4)],
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(4),
+          Validators.pattern(/^[A-Z]+$/),
+        ],
       ],
       image: '',
       aliases: '',
       affiliation: 'AEON',
       occupation: '',
       species: 'Replika',
-      gender: ['', [Validators.required]],
+      gender: ['', [Validators.required, Validators.pattern('(Male|Female)')]],
       height: [
         '',
-        [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
+        [
+          Validators.required,
+          Validators.pattern('^[0-9]*$'),
+          Validators.min(152),
+          Validators.max(260),
+        ],
       ],
     });
 
@@ -67,6 +77,37 @@ export class WorkshopComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.myForm.invalid) {
+      if (this.myForm.get('unitClass')?.hasError('required')) {
+        alert('Unit Class is required');
+      }
+      if (
+        this.myForm.get('unitClass')?.hasError('minlength') ||
+        this.myForm.get('unitClass')?.hasError('maxlength')
+      ) {
+        alert('Unit Class must be exactly 4 characters long');
+      }
+      if (this.myForm.get('unitClass')?.hasError('pattern')) {
+        alert('Unit Class must contain only capital letters');
+      }
+      if (this.myForm.get('gender')?.hasError('required')) {
+        alert('Gender is required');
+      }
+      if (this.myForm.get('gender')?.hasError('pattern')) {
+        alert('Gender must be either Male or Female');
+      }
+      if (this.myForm.get('height')?.hasError('required')) {
+        alert('Height is required');
+      }
+      if (this.myForm.get('height')?.hasError('min')) {
+        alert('Height must be at least 152cm');
+      }
+      if (this.myForm.get('height')?.hasError('max')) {
+        alert('Height must be at most 260cm');
+      }
+      return;
+    }
+
     if (this.myForm.valid) {
       this.unitAdded.emit(this.myForm.value);
       console.log(this.myForm.value);
