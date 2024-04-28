@@ -17,7 +17,7 @@
   min-width: 500px;
   flex: 2;
   filter: blur(3px) grayscale(100%);
-  transition: filter 1s;
+  transition: filter 1s, border-radius 1s, box-shadow 1s;
 }
 
 .images:hover {
@@ -25,7 +25,6 @@
   box-shadow: 0 0 0 10px black;
   transition: 1s ease;
   filter: none;
-  cursor: pointer;
 }
 
 h1 {
