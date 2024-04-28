@@ -126,14 +126,6 @@ span {
   content: "NO ONE WILL HELP YOU NOW";
 }
 
-.social_media:hover span {
-  display: none;
-}
-
-.social_media:hover::before {
-  content: "THE KING IN YELLOW";
-}
-
 .dashed-spacer {
   border-top: 5px dashed white;
   width: 100%;
@@ -160,4 +152,60 @@ span {
 .img-logo {
   width: 128px;
   height: 128px;
+}
+
+.dropdown,
+.dropdown-options {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  background-color: #171717;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown-options a {
+  display: block;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+.dropdown-options a:hover {
+  color: white;
+  background-color: #171717;
+  border-radius: 5px;
+  font-size: 2vw;
+}
+
+.dropdown-options a:focus {
+  color: white;
+  background-color: #171717;
+  border-radius: 5px;
+  font-size: 2vw;
+}
+
+.LastStarfarer:hover span {
+  display: none;
+}
+
+.LastStarfarer:hover::before {
+  content: "THE KING IN YELLOW";
+}
+
+.antihelios_:hover span {
+  display: none;
+}
+
+.antihelios_:hover::before {
+  content: "by Robert W. Chambers";
 }
