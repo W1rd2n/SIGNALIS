@@ -2,8 +2,18 @@
   <h1>SIGNALIS (SCREENSHOTS)</h1>
   <div class="container">
     @for (number of numberArray; track $index) {
-    <img class="images" [src]="'../../assets/gallery/0 (' + number + ').png'" />
+    <img
+      class="images"
+      [src]="'../../assets/gallery/0 (' + number + ').png'"
+      loading="lazy"
+      (click)="openModal('0 (' + number + ').png')"
+    />
     }
   </div>
-  <br /><br />
+  <br />
+
+  <div id="myModal" class="modal">
+    <span class="close" (click)="closeModal()">X</span>
+    <img class="modal-content" id="img01" />
+  </div>
 </div>
